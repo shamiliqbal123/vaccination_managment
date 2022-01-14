@@ -1,0 +1,67 @@
+<!doctype html>
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href=" {% static 'static1/fonts/icomoon/style.css' %} ">
+
+    <link rel="stylesheet" href=" {% static 'static1/css/owl.carousel.min.css' %} ">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=" {% static 'static1/css/bootstrap.min.css' %} ">
+
+    <!-- Style -->
+    <link rel="stylesheet" href=" {% static 'static1/css/style.css' %} ">
+
+    <title>Hospital</title>
+  </head>
+  <body>
+
+
+  <div class="content">
+
+    <div class="container">
+      <h2 class="mb-5">Hospital</h2>
+
+      <div class="table-responsive">
+
+        <table class="table custom-table">
+
+      <thead>
+            <tr>
+
+              <th scope="col">Name</th>
+              <th scope="col">Contact No</th>
+              <th scope="col">Child Name</th>
+              <th scope="col">Login ID</th>
+              <th scope="col">Child Age</th>
+              <th scope="col">Child gender</th>
+              <th scope="col">Recent Vaccination</th>
+            </tr>
+          </thead>
+          <tbody>
+     {% for i in data %}
+    <tr>
+
+        <td>{{i.name}}</td>
+        <td>{{i.contact_no}}</td>
+        <td>{{i.child_name}}</td>
+        <td>{{i.login_id}}</td>
+        <td>{{i.child_age}}</td>
+        <td>{{i.child_gender}}</td>
+        <td>{{i.recent_vaccination}}</td>
+    </tr>
+{% endfor %}
+<script src=" {% static 'static1/js/jquery-3.3.1.min.js' %} "></script>
+    <script src=" {% static 'static1/js/popper.min.js' %} "></script>
+    <script src=" {% static 'static1/js/bootstrap.min.js' %} "></script>
+    <script src=" {% static 'static1/js/main.js' %} "></script>
+  </body>
+</html>
+{% endblock %}

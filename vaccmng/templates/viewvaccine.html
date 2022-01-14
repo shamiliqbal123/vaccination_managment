@@ -1,0 +1,60 @@
+<!doctype html>
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href=" {% static 'static1/fonts/icomoon/style.css' %} ">
+
+    <link rel="stylesheet" href=" {% static 'static1/css/owl.carousel.min.css' %} ">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href=" {% static 'static1/css/bootstrap.min.css' %} ">
+
+    <!-- Style -->
+    <link rel="stylesheet" href=" {% static 'static1/css/style.css' %} ">
+
+    <title>Hospital</title>
+  </head>
+  <body>
+
+
+  <div class="content">
+
+    <div class="container">
+      <h2 class="mb-5">Hospital</h2>
+
+      <div class="table-responsive">
+
+        <table class="table custom-table">
+      <thead>
+            <tr>
+
+              <th scope="col">Vaccine Name</th>
+              <th scope="col">Vaccine Type</th>
+              <th scope="col">Description</th>
+              <th scope="col">Approval Status</th>
+            </tr>
+          </thead>
+          <tbody>
+     {% for i in data %}
+    <tr>
+
+        <td>{{i.vaccine_name}}</td>
+        <td>{{i.vaccine_type}}</td>
+        <td>{{i.description}}</td>
+        <td>{{i.approval_status}}</td>
+    </tr>
+{% endfor %}
+    <script src=" {% static 'static1/js/jquery-3.3.1.min.js' %} "></script>
+    <script src=" {% static 'static1/js/popper.min.js' %} "></script>
+    <script src=" {% static 'static1/js/bootstrap.min.js' %} "></script>
+    <script src=" {% static 'static1/js/main.js' %} "></script>
+  </body>
+</html>
+{% endblock %}
