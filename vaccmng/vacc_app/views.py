@@ -56,15 +56,27 @@ def createcomplaint(request):
         form = fromcomplaint()
         return render(request,'createvcomplaint.html',{'form':form})
 
+# def createreport(request):
+#     data = User_TBL.objects.all()
+#     data1 = Vaccine_TBL.objects.all()
+#     if request.method == "POST":
+#         form = formreport(request.POST)
+#         if form.is_valid():
+#             print("hi...")
+#             form.save()
+#             return redirect("viewreport")
+#     else:
+#         form = formreport()
+#     return render(request,'createreport.html',{'form':form,'data':data,'data1':data1})
+
 def createreport(request):
-    if request.method == "POST":
-        form = formreport(request.POST)
+    form = formreport()
+    if request.method=='POST':
+        form=formreport(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("viewreport")
-    else:
-        form = formreport()
-        return render(request,'createreport.html',{'form':form})
+            return redirect('viewreport')
+    return render(request,'report1.html',{'form':form})
 
 def viewreport(request):
     data = ReportCard_TBL.objects.all()
@@ -84,6 +96,10 @@ def viewappointment(request):
 def index2(request):
     return render(request,'index2.html')
 
+def appointmentstatus(request):
+    data = Appointment_TBL.objects.all()
+    print(data)
+    return render(request,'appointmentstatus.html',{'data':data})
 
 #NURSE.
 

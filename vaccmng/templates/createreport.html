@@ -38,35 +38,34 @@
                     <h2 class="title">Registration Form</h2>
                     <form method="POST">
                         {% csrf_token %}
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Patient Name</label>
-                                    <input class="input--style-4" type="text" name="patient">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Vaccine</label>
-                                    <input class="input--style-4" type="text" name="vaccine">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row row-space">
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="e_mail">
-                                </div>
-                            </div>
-                            <div class="col-2">
-                                <div class="input-group">
-                                    <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="contact_no">
-                                </div>
+                        <div class="col-2">
+                        <div class="input-group">
+                            <label class="label">Patient</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="patient">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    {% for i in data %}
+                                    <option>{{i.name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="select-dropdown"></div>
                             </div>
                         </div>
+                        </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                            <label class="label">Vaccine</label>
+                            <div class="rs-select2 js-select-simple select--no-search">
+                                <select name="vaccine">
+                                    <option disabled="disabled" selected="selected">Choose option</option>
+                                    {% for i in data1 %}
+                                    <option>{{i.vaccine_name}}</option>
+                                    {% endfor %}
+                                </select>
+                                <div class="select-dropdown"></div>
+                            </div>
+                        </div>
+                         </div>
 
                         <div class="p-t-15">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>

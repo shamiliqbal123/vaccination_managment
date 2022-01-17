@@ -37,27 +37,27 @@ class Vaccine_TBL(models.Model):
 
 class VaccinationSchedule_TBL(models.Model):
     hospital = models.CharField(max_length=20)
-    date = models.CharField(max_length=20)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    date = models.DateField()
+    start_time = models.TimeField()
+    end_time = models.TimeField()
 
 class Complaint_TBL(models.Model):
     user = models.ForeignKey(User_TBL, on_delete=models.CASCADE)
     subject = models.CharField(max_length=20)
     complaint = models.CharField(max_length=20)
     date = models.DateTimeField()
-    reply = models.CharField(max_length=20)
+    reply = models.CharField(max_length=20,blank=True)
 
 class Appointment_TBL(models.Model):
     user = models.ForeignKey(Vaccine_TBL, on_delete=models.CASCADE)
-    schedule = models.CharField(max_length=20)
+    schedule = models.TimeField()
     status = models.IntegerField()
     vaccine_name = models.ForeignKey(User_TBL, on_delete=models.CASCADE)
     vaccinated = models.CharField(max_length=20)
 
 class ReportCard_TBL(models.Model):
     patient = models.ForeignKey(User_TBL, on_delete=models.CASCADE)
-    vaccine = models.ForeignKey(Vaccine_TBL, on_delete=models.CASCADE,related_name='vaccine')
+    vaccine = models.ForeignKey(Vaccine_TBL, on_delete=models.CASCADE)
 
 
 # Create your models here.

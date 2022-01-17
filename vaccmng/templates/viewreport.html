@@ -27,7 +27,7 @@
   <div class="content">
 
     <div class="container">
-      <h2 class="mb-5">Hospital</h2>
+      <h2 class="mb-5">Report</h2>
 
       <div class="table-responsive">
 
@@ -39,9 +39,10 @@
     {% for i in data %}
     <tr>
 
-        <td>{{i.patient}}</td>
-        <td>{{i.vaccine}}</td>
+        <td>{{i.User_TBL.name}}</td>
+        <td>{{i.Vaccine_TBL.vaccine_name}}</td>
     </tr>
+         </tbody>
 {% endfor %}
     <script src=" {% static 'static1/js/jquery-3.3.1.min.js' %} "></script>
     <script src=" {% static 'static1/js/popper.min.js' %} "></script>

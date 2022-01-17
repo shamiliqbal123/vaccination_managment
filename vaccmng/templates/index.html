@@ -372,7 +372,7 @@
             </a>
           </li>
           <li>
-            <a href=" {% static 'icons-remix.html' %} ">
+            <a href=" {% url 'appointmentstatus' %} ">
               <i class="bi bi-circle"></i><span>Status</span>
             </a>
           </li>
@@ -385,7 +385,7 @@
         </a>
         <ul id="report-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'createreport' %} ">
+            <a href=" {% url 'report1' %} ">
               <i class="bi bi-circle"></i><span>Add Report</span>
             </a>
           </li>
@@ -399,7 +399,7 @@
 
 
   </aside><!-- End Sidebar-->
-
+<main class="main" id="main">
 {% block content %}
 {% endblock %}
  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

@@ -300,7 +300,8 @@
         </a>
         <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'viewuser' %} ">
+            <a href=" {% url 'viewuser_nurse' %} ">
+
               <i class="bi bi-circle"></i><span>View User</span>
             </a>
           </li>
@@ -313,7 +314,7 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'viewhospital' %} ">
+            <a href=" {% url 'viewhospital_nurse' %} ">
               <i class="bi bi-circle"></i><span>View Hospital</span>
             </a>
           </li>
@@ -326,17 +327,17 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'createvaccine' %} ">
+            <a href=" {% url 'createschedule' %} ">
               <i class="bi bi-circle"></i><span>Add Schedule</span>
             </a>
           </li>
           <li>
-            <a href=" {% url 'viewvaccine' %} ">
+            <a href=" {% url 'viewschedule' %} ">
               <i class="bi bi-circle"></i><span>Vaccination Schedules</span>
             </a>
           </li>
           <li>
-            <a href=" {% url 'viewvaccine' %} ">
+            <a href=" {% url 'viewappointment_nurse' %} ">
               <i class="bi bi-circle"></i><span>Appointments</span>
             </a>
           </li>
@@ -349,7 +350,7 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'viewcomplaint' %} ">
+            <a href=" {% url 'registercomplaint' %} ">
               <i class="bi bi-circle"></i><span>Register Complaint</span>
             </a>
           </li>
@@ -365,7 +366,7 @@
 
 
   </aside><!-- End Sidebar-->
-
+<main class="main" id="main">
 {% block content %}
 {% endblock %}
  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
