@@ -26,4 +26,5 @@ urlpatterns = [
     path("report1", views.createreport, name="report1"),
     path("viewcomplaint_nurse", nurseview.viewcomplaint_nurse, name="viewcomplaint_nurse"),
     path("appointmentstatus", views.appointmentstatus, name="appointmentstatus"),
+    path("user", views.user, name="user"),
 ]

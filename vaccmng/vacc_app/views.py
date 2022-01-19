@@ -106,4 +106,7 @@ def appointmentstatus(request):
 def nurse(request):
     return render(request,'nurse.html')
 
+#user
+def user(request):
+    return render(request,'user.html')
 # Create your views here.
