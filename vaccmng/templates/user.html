@@ -275,7 +275,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href=" {% url 'dashboard' %} ">
+        <a class="nav-link " href=" {% url 'admin_home' %} ">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -287,7 +287,7 @@
         </a>
         <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'viewvaccine_nurse' %} ">
+            <a href=" {% url 'viewuser_user' %} ">
               <i class="bi bi-circle"></i><span>My Profile</span>
             </a>
           </li>
@@ -304,12 +304,12 @@
         </a>
         <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'createschedule' %} ">
+            <a href=" {% url 'viewschedule_user' %} ">
               <i class="bi bi-circle"></i><span>View Schedule</span>
             </a>
           </li>
           <li>
-            <a href=" {% url 'viewschedule' %} ">
+            <a href=" {% url 'viewappointment_user' %} ">
               <i class="bi bi-circle"></i><span>Appointment</span>
             </a>
           </li>
@@ -322,7 +322,7 @@
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'registercomplaint' %} ">
+            <a href=" {% url 'registercomplaint_user' %} ">
               <i class="bi bi-circle"></i><span>Register Complaint</span>
             </a>
           </li>
@@ -340,7 +340,7 @@
         </a>
         <ul id="report-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href=" {% url 'report1' %} ">
+            <a href=" {% url 'viewreport_user' %} ">
               <i class="bi bi-circle"></i><span>View Report</span>
             </a>
           </li>

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import *
-admin.site.register(Login_TBL)
+admin.site.register(Login)
 admin.site.register(Hospital_TBL)
 admin.site.register(Nurse_TBL)
 admin.site.register(User_TBL)

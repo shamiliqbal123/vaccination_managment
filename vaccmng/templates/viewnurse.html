@@ -37,17 +37,15 @@
     <th>Contact_no</th>
     <th>Address</th>
     <th>e_mail</th>
-    <th>login_id</th>
     <th>hospital</th>
     </thead>
     {% for i in data %}
     <tr>
 
         <td>{{i.name}}</td>
-        <td>{{i.contact_no}}</td>
+        <td>{{i.contactno}}</td>
         <td>{{i.address}}</td>
-        <td>{{i.e_mail}}</td>
-        <td>{{i.login_id}}</td>
+        <td>{{i.email}}</td>
         <td>{{i.hospital}}</td>
     </tr>
 {% endfor %}

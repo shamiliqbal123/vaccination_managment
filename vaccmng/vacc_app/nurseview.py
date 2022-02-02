@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
@@ -37,18 +38,37 @@ def viewappointment_nurse(request):
     print(data)
     return render(request,'viewappointment_nurse.html',{'data':data})
 
-def registercomplaint(request):
+def createcomplaint(request):
     data = User_TBL.objects.all()
     if request.method == "POST":
-        form = formreport(request.POST)
+        form = formregistercomplaint(request.POST)
         if form.is_valid():
             form.save()
             return redirect("viewcomplaint")
     else:
         form = formregistercomplaint()
-    return render(request,'registercomplaint.html',{'form':form,'data':data})
+    return render(request,'createcomplaint.html',{'form':form,'data':data})
 
 def viewcomplaint_nurse(request):
     data = Complaint_TBL.objects.all()
     print(data)
     return render(request,'viewcompalint_nurse.html',{'data':data})
+
+def nurse_register(request):
+    user_form = loginregister()
+    nurse_form = nurseregister()
+    if request.method == 'POST':
+
+        user_form = loginregister(request.POST)
+        nurse_form = nurseregister(request.POST)
+        if user_form.is_valid() and nurse_form.is_valid():
+           user = user_form.save(commit=False)
+           user.is_nurse = True
+           user.save()
+           nurse = nurse_form.save(commit=False)
+           nurse.user = user
+           nurse.save()
+           messages.info(request, 'Nurse Registered Successfully')
+           return redirect('loginview')
+    return render(request,'nurseregister.html',{'user_form': user_form,'nurse_form':nurse_form})
+
