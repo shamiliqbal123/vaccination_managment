@@ -39,15 +39,14 @@ def viewappointment_nurse(request):
     return render(request,'viewappointment_nurse.html',{'data':data})
 
 def createcomplaint(request):
-    data = User_TBL.objects.all()
+    form = formregistercomplaint()
     if request.method == "POST":
         form = formregistercomplaint(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("viewcomplaint")
-    else:
-        form = formregistercomplaint()
-    return render(request,'createcomplaint.html',{'form':form,'data':data})
+            return redirect("viewcomplaint_nurse")
+
+    return render(request,'createcomplaint.html',{'form':form})
 
 def viewcomplaint_nurse(request):
     data = Complaint_TBL.objects.all()
@@ -71,4 +70,21 @@ def nurse_register(request):
            messages.info(request, 'Nurse Registered Successfully')
            return redirect('loginview')
     return render(request,'nurseregister.html',{'user_form': user_form,'nurse_form':nurse_form})
+
+#DELETE
+
+def deletehospital_nurse(request,id=None):
+    data = Hospital_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewhospital_nurse')
+
+def deleteuser_nurse(request,id=None):
+    data = User_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewuser_nurse')
+
+def deletevaccine_nurse(request,id=None):
+    data = Vaccine_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewvaccine_nurse')
 

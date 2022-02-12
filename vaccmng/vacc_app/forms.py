@@ -29,7 +29,7 @@ class fromvaccine(forms.ModelForm):
 class fromcomplaint(forms.ModelForm):
     class Meta:
         model = Complaint_TBL
-        fields = '__all__'
+        fields = ('subject','complaint','date','reply')
 
 
 class formreport(forms.ModelForm):
@@ -48,11 +48,10 @@ class formschedule(forms.ModelForm):
 
 
 class formregistercomplaint(forms.ModelForm):
-    user = forms.ModelChoiceField(queryset=User_TBL.objects.all())
 
     class Meta:
         model = Complaint_TBL
-        fields = '__all__'
+        fields = ('subject','complaint','date')
 
 
 class loginregister(UserCreationForm):

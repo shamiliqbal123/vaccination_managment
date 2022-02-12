@@ -27,7 +27,7 @@
   <div class="content">
 
     <div class="container">
-      <h2 class="mb-5">Hospital</h2>
+      <h2 class="mb-5">Nurses</h2>
 
       <div class="table-responsive">
 
@@ -38,6 +38,7 @@
     <th>Address</th>
     <th>e_mail</th>
     <th>hospital</th>
+    <th>Delete</th>
     </thead>
     {% for i in data %}
     <tr>
@@ -47,6 +48,7 @@
         <td>{{i.address}}</td>
         <td>{{i.email}}</td>
         <td>{{i.hospital}}</td>
+        <td><a href="{% url 'deletenurse' i.id %}">Delete</a></td>
     </tr>
 {% endfor %}
     <script src=" {% static 'static1/js/jquery-3.3.1.min.js' %} "></script>

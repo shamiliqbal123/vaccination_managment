@@ -145,8 +145,40 @@ def login_view(request):
             messages.info(request, 'Invalid Credentials')
     return render(request, 'login.html')
 
-# def nurseregister(request):
-#     return render(request,'nurseregister.html')
+#DELETE
+
+def deletehospital(request,id=None):
+    data = Hospital_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewhospital')
+
+def deletenurse(request,id=None):
+    data = Nurse_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewnurse')
+
+def deleteuser(request,id=None):
+    data = User_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewuser')
+
+def deletevaccine(request,id=None):
+    data = Vaccine_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewvaccine')
+
+def deletereport(request,id=None):
+    data = ReportCard_TBL.objects.get(id=id)
+    data.delete()
+    return redirect('viewreport')
+#UPDATE
+
+
+
+
+
+
 
 
 # Create your views here.
+

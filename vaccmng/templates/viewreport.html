@@ -35,12 +35,14 @@
     <thead>
     <th>Patient Name</th>
     <th>Vaccine</th>
+    <th>Delete</th>
     </thead>
     {% for i in data %}
     <tr>
 
         <td>{{i.patient}}</td>
         <td>{{i.vaccine }}</td>
+        <td><a href="{% url 'deletereport' i.id %}">Delete</a></td>
     </tr>
          </tbody>
 {% endfor %}

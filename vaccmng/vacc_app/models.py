@@ -53,7 +53,6 @@ class VaccinationSchedule_TBL(models.Model):
 
 
 class Complaint_TBL(models.Model):
-    user = models.ForeignKey(User_TBL, on_delete=models.CASCADE)
     subject = models.CharField(max_length=20)
     complaint = models.CharField(max_length=20)
     date = models.DateTimeField()

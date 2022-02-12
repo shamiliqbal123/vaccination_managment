@@ -23,7 +23,6 @@
   </head>
   <body>
 
-
   <div class="content">
 
     <div class="container">
@@ -40,6 +39,7 @@
               <th scope="col">Place</th>
               <th scope="col">Contact No</th>
               <th scope="col">E mail</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -50,6 +50,7 @@
         <td>{{i.place}}</td>
         <td>{{i.contact_no}}</td>
         <td>{{i.e_mail}}</td>
+        <td><a href="{% url 'deletehospital' i.id %}">Delete</a></td>
     </tr>
     {% endfor %}
 

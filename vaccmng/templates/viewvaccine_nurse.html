@@ -27,7 +27,7 @@
   <div class="content">
 
     <div class="container">
-      <h2 class="mb-5">Hospital</h2>
+      <h2 class="mb-5">Users</h2>
 
       <div class="table-responsive">
 
@@ -39,6 +39,7 @@
               <th scope="col">Vaccine Type</th>
               <th scope="col">Description</th>
               <th scope="col">Approval Status</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -49,6 +50,7 @@
         <td>{{i.vaccine_type}}</td>
         <td>{{i.description}}</td>
         <td>{{i.approval_status}}</td>
+        <td><a href="{% url 'deletevaccine_nurse' i.id %}">Delete</a></td>
     </tr>
 {% endfor %}
     <script src=" {% static 'static1/js/jquery-3.3.1.min.js' %} "></script>

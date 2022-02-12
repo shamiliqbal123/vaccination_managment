@@ -43,6 +43,7 @@
               <th scope="col">Child Age</th>
               <th scope="col">Child gender</th>
               <th scope="col">Recent Vaccination</th>
+              <th scope="col">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +57,7 @@
         <td>{{i.child_age}}</td>
         <td>{{i.child_gender}}</td>
         <td>{{i.recent_vaccination}}</td>
+        <td><a href="{% url 'deleteuser' i.id %}">Delete</a></td>
     </tr>
 {% endfor %}
 <script src=" {% static 'static1/js/jquery-3.3.1.min.js' %} "></script>

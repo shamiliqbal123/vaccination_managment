@@ -19,7 +19,7 @@
     <!-- Style -->
     <link rel="stylesheet" href=" {% static 'static1/css/style.css' %} ">
 
-    <title>Hospital</title>
+    <title>Complaint</title>
   </head>
   <body>
 
@@ -27,38 +27,29 @@
   <div class="content">
 
     <div class="container">
-      <h2 class="mb-5">complaint</h2>
+      <h2 class="mb-5">Complaint</h2>
 
       <div class="table-responsive">
 
         <table class="table custom-table">
+    <thead>
 
-      <thead>
-            <tr>
+    <th>Subject</th>
+    <th>Complaint</th>
+    <th>Date</th>
+    <th>Reply</th>
 
-              <th scope="col">Name</th>
-              <th scope="col">Subject</th>
-              <th scope="col">Complaint</th>
-              <th scope="col">date</th>
-              <th scope="col">Reply</th>
-            </tr>
-          </thead>
-          <tbody>
-     {% for i in data %}
+    </thead>
+    {% for i in data %}
     <tr>
 
-        <td>{{i.user}}</td>
+
         <td>{{i.subject}}</td>
         <td>{{i.complaint}}</td>
         <td>{{i.date}}</td>
         <td>{{i.reply}}</td>
     </tr>
-    {% endfor %}
-
-
-
-
-
+{% endfor %}
     <script src=" {% static 'static1/js/jquery-3.3.1.min.js' %} "></script>
     <script src=" {% static 'static1/js/popper.min.js' %} "></script>
     <script src=" {% static 'static1/js/bootstrap.min.js' %} "></script>
